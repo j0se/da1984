@@ -48,7 +48,7 @@ class Model
 
         $this->_getVarsClass(true);
 
-        $this->_sql = "SELECT " . implode(",", array_keys($this->_vars_class) ) . " FROM ";
+        $this->_sql = "SELECT id, " . implode(",", array_keys($this->_vars_class) ) . " FROM ";
 
         $this->_sql .= $this->_table ;
 
