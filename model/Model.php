@@ -1,6 +1,6 @@
 <?php
 
-include_once("Mysql.class.php");
+include_once("lib/Mysql.class.php");
 
 class Model
 {

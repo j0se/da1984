@@ -2,7 +2,7 @@
 
 // declare( strict_types = 1 );
 
-include('Model.php');
+include('model/Model.php');
 
 class Equipo extends Model
 {
