@@ -15,11 +15,16 @@ include('model/Equipo.php');
 // //print_r($equipo->delete(6));
 
 include('view/header.php');
+isset($_GET['model']) ? $model = $_GET['model'] : $model = 'equipo';
+isset($_GET['op']) ? $op = $_GET['op'] : $op = 'list';
 
-switch($_GET['model']) {
+switch($model) {
+    default:
     case 'equipo': $model = 'equipo'; break;
+
 }
-switch($_GET['op']){
+switch($op){
+    default:
     case 'list':
         $op = 'list';
         $class = ucfirst($model);
@@ -27,6 +32,7 @@ switch($_GET['op']){
         $data = $obj->list();
         include('view/list.php');
         break;
+
 }
 
 
