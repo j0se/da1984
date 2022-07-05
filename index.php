@@ -2,7 +2,7 @@
 
 include('model/Model.php');
 include('model/Equipo.php');
-
+include('model/Jugador.php');
 // $equipo = new Equipo();
 
 // // $equipo->setNombre("chip y chop");
@@ -22,6 +22,7 @@ isset($_GET['op']) ? $op = $_GET['op'] : $op = 'list';
 switch($model) {
     default:
     case 'equipo': $model = 'equipo'; break;
+    case 'jugador': $model = 'jugador'; break;
 
 }
 switch($op){
@@ -68,6 +69,13 @@ switch($op){
         include('view/'.$model.'/new.php');
         break;
 
+    case 'delete':
+        $class = ucfirst($model);
+        $obj = new $class;
+        $data = $obj->delete($_POST['id']);
+        //$data = $obj->getFields();
+        Header("Location: /?model=".$model."&op=list");
+        break;
 }
 
 

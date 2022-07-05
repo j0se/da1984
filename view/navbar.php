@@ -9,6 +9,9 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/?model=equipo&op=list">Equipos</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/?model=jugador&op=list">Jugadores</a>
+        </li>
       </ul>
     </div>
   </div>
