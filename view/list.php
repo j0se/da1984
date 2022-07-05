@@ -10,7 +10,7 @@ include('view/navbar.php');
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th><a href="/?model=<?$model?>&op=new"> <i class="fa-solid fa-plus"></i> </a></th>
+                <th><a href="/?model=<?=$model?>&op=new"> <i class="fa-solid fa-plus"></i> </a></th>
                 <? foreach ($fields as $k => $v):?>
                 <th> <?= strtoupper($k) ?></th>
                 <? endforeach; ?>
