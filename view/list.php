@@ -21,7 +21,7 @@ include('view/navbar.php');
             <tr>
                 <td><a href="/?model=<?=$model?>&op=show&id=<?=$v['id']?>"> <i class="fa-solid fa-eye"></i> </a></td>
                 <? foreach ($fields as $key => $value):?>
-                <td> <?= $v[$key] ?></td>
+                <td> <?= ($value != 'boolean') ? $v[$key] : (($v[$key] == 0) ? 'No' : 'Si' )?></td>
                 <? endforeach; ?>
             </tr>
             <? endforeach; ?>
