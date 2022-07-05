@@ -82,7 +82,7 @@ class Model
 
             if ($this->table_type_fields[$nombre] == 'date')$this->_sql .=  empty($valor) ? 'CURRENT_DATE()' : '"' . $valor . '",' ;
 
-
+            if ($this->table_type_fields[$nombre] == 'boolean') $this->_sql .= '' . ($valor == 1) ? $valor : 0 . ',' ;
         }
 
         $this->_sql = rtrim($this->_sql, ",") ;

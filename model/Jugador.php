@@ -38,7 +38,7 @@ class Jugador extends Model
 
     public function getCaptain(): bool
     {
-        return $this->captain . "...";
+        return $this->captain;
     }
 
     public function setCaptain($value): Jugador
