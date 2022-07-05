@@ -112,4 +112,21 @@ class Model
         return $this->_execute();
     }
 
+    public function update(array $data)
+    {
+        $this->_sql = "UPDATE " . $this->_table. " SET ";
+
+        foreach($data as $k=>$v)
+        {
+            if ($k != 'id') $this->_sql .=  $k . "='" . $v . "', ";
+        }
+
+        $this->_sql = substr_replace(trim($this->_sql) ,"", -1);
+
+        $this->_sql .= " WHERE id = " . $data['id'];
+
+        return $this->_execute();
+    }
+
+
 }
