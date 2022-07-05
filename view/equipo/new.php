@@ -9,7 +9,7 @@ include('view/navbar.php');
 
         <h1><?=strtoupper($model)?></h1>
 
-        <form class="row g-3" method="POST" action="<?= $_SERVER['PHP_SELF']. "/?model=equipo&op=insert"?>">
+        <form class="row g-3" method="POST" action="<?= $_SERVER['PHP_SELF']. "/?model=".$model."&op=insert"?>">
 
             <div class="col-md-6">
                 <label class="form-label">Nombre</label>
@@ -35,7 +35,7 @@ include('view/navbar.php');
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
             <div class="col-md-6">
-                <a href="/?model=equipo&op=list" class="btn btn-secondary">Cancelar</a>
+                <a href="/?model=<?=$model?>&op=list" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>

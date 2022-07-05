@@ -36,7 +36,7 @@ include('view/navbar.php');
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
             <div class="col-md-6">
-                <a href="/?model=equipo&op=list" class="btn btn-secondary">Cancelar</a>
+                <a href="/?model=<?=$model?>&op=list" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>
