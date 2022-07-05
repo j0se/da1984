@@ -37,7 +37,7 @@ switch($op){
         $obj = new $class;
         $data = $obj->show($_GET['id']);
         //$data = $obj->getFields();
-        include('view/show.php');
+        include('view/'.$model.'/show.php');
         break;
     case 'update':
         $class = ucfirst($model);
@@ -64,7 +64,7 @@ switch($op){
         $obj = new $class;
         $data = [];
         //$data = $obj->getFields();
-        include('view/new.php');
+        include('view/'.$model.'/new.php');
         break;
 
 }
