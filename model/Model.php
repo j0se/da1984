@@ -80,9 +80,8 @@ class Model
 
             if ($this->table_type_fields[$nombre] == 'string') $this->_sql .= '"' . $valor . '",' ;
 
-            if ($this->table_type_fields[$nombre] == 'date') $this->_sql .= '"' . $valor . '",' ;
+            if ($this->table_type_fields[$nombre] == 'date')$this->_sql .=  empty($valor) ? 'CURRENT_DATE()' : '"' . $valor . '",' ;
 
-            print_r([$nombre, $valor]);
 
         }
 

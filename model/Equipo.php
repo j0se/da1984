@@ -18,6 +18,10 @@ class Equipo extends Model
         'alta'      =>  'date'
     );
 
+    public function getFields(): array
+    {
+        return $this->table_type_fields;
+    }
 
     public function getNombre(): string
     {

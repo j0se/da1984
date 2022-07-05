@@ -10,7 +10,7 @@ include('view/navbar.php');
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th></th>
+                <th><a href="/?model=<?$model?>&op=new"> Nuevo </a></th>
                 <th> Nombre </th>
                 <th> Ciudad </th>
                 <th> Deporte </th>
@@ -20,7 +20,7 @@ include('view/navbar.php');
         <tbody>
             <? foreach ($data as $k=>$v): ?>
             <tr>
-                <td><a href="/?model=<?=$model?>&op=show"> Ver </a></td>
+                <td><a href="/?model=<?=$model?>&op=show&id=<?=$v['id']?>"> Ver </a></td>
                 <td><?= $v['nombre'] ?></td>
                 <td><?= $v['ciudad'] ?></td>
                 <td><?= $v['deporte'] ?></td>

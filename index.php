@@ -26,11 +26,44 @@ switch($model) {
 switch($op){
     default:
     case 'list':
-        $op = 'list';
         $class = ucfirst($model);
         $obj = new $class;
         $data = $obj->list();
         include('view/list.php');
+        break;
+    case 'show':
+        $class = ucfirst($model);
+        $obj = new $class;
+        $data = $obj->show($_GET['id']);
+        //$data = $obj->getFields();
+        include('view/show.php');
+        break;
+    case 'update':
+        $class = ucfirst($model);
+        $obj = new $class;
+        $obj->update($_POST);
+        Header("Location: /");
+        break;
+
+    case 'insert':
+        $class = ucfirst($model);
+        $obj = new $class;
+
+        foreach ($obj->getFields() as $k=>$v)
+        {
+            $setter = "set".ucfirst($k);
+            $obj->$setter($_POST[$k]);
+        }
+        $obj->save();
+        Header("Location: /");
+        break;
+
+    case 'new':
+        $class = ucfirst($model);
+        $obj = new $class;
+        $data = [];
+        //$data = $obj->getFields();
+        include('view/new.php');
         break;
 
 }
