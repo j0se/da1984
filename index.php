@@ -29,6 +29,7 @@ switch($op){
         $class = ucfirst($model);
         $obj = new $class;
         $data = $obj->list();
+        $fields = $obj->getFields();
         include('view/list.php');
         break;
     case 'show':

@@ -10,21 +10,19 @@ include('view/navbar.php');
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th><a href="/?model=<?$model?>&op=new"> Nuevo </a></th>
-                <th> Nombre </th>
-                <th> Ciudad </th>
-                <th> Deporte </th>
-                <th> Fec. Alta </th>
+                <th><a href="/?model=<?$model?>&op=new"> <i class="fa-solid fa-plus"></i> </a></th>
+                <? foreach ($fields as $k => $v):?>
+                <th> <?= strtoupper($k) ?></th>
+                <? endforeach; ?>
             </tr>
         </thead>
         <tbody>
             <? foreach ($data as $k=>$v): ?>
             <tr>
-                <td><a href="/?model=<?=$model?>&op=show&id=<?=$v['id']?>"> Ver </a></td>
-                <td><?= $v['nombre'] ?></td>
-                <td><?= $v['ciudad'] ?></td>
-                <td><?= $v['deporte'] ?></td>
-                <td><?= $v['alta'] ?></td>
+                <td><a href="/?model=<?=$model?>&op=show&id=<?=$v['id']?>"> <i class="fa-solid fa-eye"></i> </a></td>
+                <? foreach ($fields as $key => $value):?>
+                <td> <?= $v[$key] ?></td>
+                <? endforeach; ?>
             </tr>
             <? endforeach; ?>
         </tbody>
