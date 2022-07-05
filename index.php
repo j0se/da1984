@@ -1,5 +1,6 @@
 <?php
 
+include('model/Model.php');
 include('model/Equipo.php');
 
 // $equipo = new Equipo();

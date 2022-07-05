@@ -2,8 +2,6 @@
 
 // declare( strict_types = 1 );
 
-include('model/Model.php');
-
 class Equipo extends Model
 {
     protected string $nombre;
