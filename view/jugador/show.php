@@ -47,9 +47,24 @@ include('view/navbar.php');
 
 <script>
     $(document).ready(function(){
-        $("#delete").click(function()
+        $("#delete").click(function(e)
         {
-            $('#form').attr('action', '<?= $_SERVER['PHP_SELF']. "/?model=".$model."&op=delete"?>');
+            e.preventDefault();
+
+            Swal.fire({
+                title: 'Desea borrar el registro?',
+                text: "Esta acción no se podrá deshacer!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, borralo!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $('#form').attr('action', '<?= $_SERVER['PHP_SELF']. "/?model=".$model."&op=delete"?>');
+                        $('#form').submit();
+                    }
+                })
         });
 
     });
