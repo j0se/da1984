@@ -16,6 +16,18 @@ class Equipo extends Model
         'alta'      =>  'date'
     );
 
+    protected string $_table_relacion = 'jugador';
+    protected string $_campo_relacion = 'nombre';
+
+
+    // public function getRelacionados(): array
+    // {
+    //     return array(
+    //         array('id'=> 1, 'nombre' => 'juan', 'numero' => 2),
+    //         array('id'=>2,'nombre' => 'pedro', 'numero' => 4),
+    //     );
+    // }
+
     public function getFields(): array
     {
         return $this->table_type_fields;

@@ -38,7 +38,7 @@ switch($op){
         $class = ucfirst($model);
         $obj = new $class;
         $data = $obj->show($_GET['id']);
-        //$data = $obj->getFields();
+        $data_relacionados = $obj->getRelacionados();
         include('view/'.$model.'/show.php');
         break;
     case 'update':

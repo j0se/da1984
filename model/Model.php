@@ -7,6 +7,8 @@ class Model
     protected string $_sql ;
     protected array $_vars_class;
     protected string $_table;
+    protected string $_table_relacion;
+    protected string $_campo_relacion;
 
     function __construct()
     {
@@ -27,6 +29,22 @@ class Model
         }catch(Exception $e){
             die('Caught exception: '. $e->getMessage());
         }
+    }
+
+
+    public function setRelacionTabla($table_relacion, $campo_relacion)
+    {
+        $this->_campo_relacion = $campo_relacion;
+        $this->_table_relacion = $table_relacion;
+    }
+
+    public function getRelacionados()
+    {
+        $this->_sql = "SELECT secundaria.* FROM " .$this->_table ." primaria";
+        $this->_sql .= " INNER JOIN " . $this->_table_relacion . " secundaria ";
+        $this->_sql .="  ON primaria." . $this->_campo_relacion . "=secundaria." . $this->_table;
+
+        return $this->_execute();
     }
 
     private function _getVarsClass(bool $get_class_vars)

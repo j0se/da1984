@@ -39,5 +39,31 @@ include('view/navbar.php');
                 <a href="/?model=<?=$model?>&op=list" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
+        <hr>
+        <div class="bg-light p-5 rounded">
+            <h2>Jugadores</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th><a href="/?model=jugador&op=new&team=<?= $data[0]['nombre']?>"> <i class="fa-solid fa-plus"></i> </a></th>
+                        <th> Nombre</th>
+                        <th> Número</th>
+                        <th> Captain</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?
+
+                    foreach ($data_relacionados as $k): ?>
+                    <tr>
+                        <td><a href="/?model=jugador&op=show&id=<?=$k['id']?>"> <i class="fa-solid fa-eye"></i> </a></td>
+                        <td><?=$k['nombre']?></td>
+                        <td><?=$k['numero']?></td>
+                        <td><?=$k['captain']?></td>
+                    </tr>
+                    <? endforeach; ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </main>
