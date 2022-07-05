@@ -44,7 +44,7 @@ switch($op){
         $class = ucfirst($model);
         $obj = new $class;
         $obj->update($_POST);
-        Header("Location: /");
+        Header("Location: /?model=".$model."&op=list");
         break;
 
     case 'insert':
@@ -57,7 +57,7 @@ switch($op){
             $obj->$setter($_POST[$k]);
         }
         $obj->save();
-        Header("Location: /");
+        Header("Location: /?model=".$model."&op=list");
         break;
 
     case 'new':
