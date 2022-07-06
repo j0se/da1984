@@ -18,9 +18,9 @@
 			self::$connection_info = array('host' => $host, 'user' => $user, 'pass' => $pass, 'db' => $db);
 		}
 
-		function __destruct(){
-			if(self::$link) mysqli_close(self::$link);
-		}
+		// function __destruct(){
+		// 	if(self::$link) mysqli_close(self::$link);
+		// }
 
 		/**
 		 * Setter method
