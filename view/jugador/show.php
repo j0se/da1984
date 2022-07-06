@@ -22,7 +22,7 @@ include('view/navbar.php');
             </div>
             <div class="col-md-6">
                 <label for="ciudad" class="form-label">Equipo</label>
-                <input type="text" class="form-control" name="equipo" id="equipo" value="<?= $data[0]['equipo']?>">
+                <input type="text" readonly="readonly" class="form-control" name="equipo" id="equipo" value="<?= $data[0]['equipo']?>">
             </div>
             <div class="col-md-6">
                 <label class="form-label">Capitán</label>

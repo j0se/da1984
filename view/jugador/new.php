@@ -21,7 +21,7 @@ include('view/navbar.php');
             </div>
             <div class="col-md-6">
                 <label class="form-label">Equipo</label>
-                <input type="text" class="form-control" name="equipo" id="equipo">
+                <input type="text"  <?= isset($_GET['team']) ? ' readonly = "readonly"' : ''?> class="form-control" name="equipo" id="equipo" value="<?= isset($_GET['team']) ? $_GET['team'] : ''?>">
             </div>
             <div class="col-md-6">
                 <label class="form-label">Capitán</label>

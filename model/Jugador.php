@@ -16,6 +16,9 @@ class Jugador extends Model
         'captain'   =>  'boolean'
     );
 
+    protected string $_table_relacion = '';
+    protected string $_campo_relacion = '';
+
     public function getFields(): array
     {
         return $this->table_type_fields;

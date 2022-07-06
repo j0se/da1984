@@ -59,7 +59,7 @@ include('view/navbar.php');
                         <td><a href="/?model=jugador&op=show&id=<?=$k['id']?>"> <i class="fa-solid fa-eye"></i> </a></td>
                         <td><?=$k['nombre']?></td>
                         <td><?=$k['numero']?></td>
-                        <td><?=$k['captain']?></td>
+                        <td><?=($k['captain']==1) ? 'Si' : 'No' ?></td>
                     </tr>
                     <? endforeach; ?>
                 </tbody>

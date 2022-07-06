@@ -38,12 +38,12 @@ class Model
         $this->_table_relacion = $table_relacion;
     }
 
-    public function getRelacionados()
+    public function getRelacionados($id)
     {
         $this->_sql = "SELECT secundaria.* FROM " .$this->_table ." primaria";
         $this->_sql .= " INNER JOIN " . $this->_table_relacion . " secundaria ";
         $this->_sql .="  ON primaria." . $this->_campo_relacion . "=secundaria." . $this->_table;
-
+        $this->_sql .=" where primaria.id=" .$id;
         return $this->_execute();
     }
 
